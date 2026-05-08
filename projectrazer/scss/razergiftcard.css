@@ -1,0 +1,961 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: left;
+  background-color: #000;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  height: 3.75rem;
+  padding-bottom: 0;
+  transition: all 0.3s linear;
+  background: #000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 30;
+}
+.head .razer_main {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 3.125rem;
+}
+.head .razer_main .logo {
+  color: #fff;
+  text-decoration: none;
+}
+.head .razer_main .logo img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+.head .razer_main .container {
+  width: 100%;
+  padding: 0 40px;
+  position: relative;
+}
+.head .razer_main .container .navbar .nav-links {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  height: 100%;
+  -moz-column-gap: 45px;
+       column-gap: 45px;
+}
+.head .razer_main .container .navbar .nav-links .nav-link {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.head .razer_main .container .navbar .nav-links .nav-link a {
+  text-decoration: none;
+  color: #BBB;
+}
+.head .razer_main .container .navbar .nav-links .nav-link:hover .drop-down {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%);
+}
+.head .razer_main .container .navbar .nav-links .drop-down {
+  position: absolute;
+  top: 41px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 260px;
+  height: 760px;
+  overflow-y: auto;
+  background-color: gray;
+  padding: 24px 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #44d62c;
+  z-index: 999;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.head .razer_main .container .navbar .nav-links .drop-down .mega-menu-close-button {
+  background: url(https://www.razer.com/assets/images/mega-menu/desktop-close-icon.svg) center no-repeat;
+  border: 0px;
+  display: block;
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  transition: background-image 0.5s ease-in-out;
+}
+.head .razer_main .container .navbar .nav-links .drop-down .mega-menu-close-button .section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 10px;
+  overflow: auto;
+  direction: rtl;
+}
+.head .razer_main .container .navbar .nav-links .drop-down .mega-menu-close-button .section h4 {
+  color: #bbb;
+  direction: ltr;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin: 0px 0px 0px 8px;
+  padding: 0px;
+}
+.head .razer_main .container .navbar .nav-links .drop-down ul {
+  background: #bbb;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.head .razer_main .container .navbar .nav-links .drop-down ul li {
+  background: gray;
+  padding: 15px 0px 15px 0px;
+  position: relative;
+  width: 100%;
+}
+.head .razer_main .container .navbar .nav-links .drop-down ul li a {
+  color: #eee;
+}
+.head .razer_main .container .navbar .nav-links .drop-down ul li a:hover {
+  color: #44D62C;
+  padding-right: 0px;
+}
+.head .razer_main .icons {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.head .razer_main .icons .icon {
+  padding: 0 14px 0 0;
+}
+.head .razer_main .icons .icon:hover svg path,
+.head .razer_main .icons .icon:hover svg circle {
+  fill: #eee;
+}
+
+.sticky-nav {
+  border-bottom: 1px solid #44d62c;
+  position: fixed;
+  top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 4;
+  left: 0;
+  max-width: 100%;
+  background-color: #101010;
+}
+.sticky-nav a.gtm_learn_more {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s linear;
+}
+.sticky-nav a.gtm_learn_more:hover {
+  color: #44d62c;
+}
+.sticky-nav .container {
+  padding: 10px;
+  max-width: 1200px;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.sticky-nav .container #menu-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  -moz-column-gap: 1.5rem;
+  column-gap: 1.5rem;
+  align-items: center;
+}
+.sticky-nav .container #menu-list .product-name {
+  grid-column: 1/span 8;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 16px;
+  font-family: RazerF5;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+.sticky-nav .container #menu-list .mobile-nav {
+  display: none;
+}
+.sticky-nav .container #menu-list .mobile-nav .subnav-toggle {
+  cursor: pointer;
+}
+.sticky-nav .container #menu-list .mobile-nav .subnav-toggle .icon-bar {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+}
+.sticky-nav .container #menu-list .mobile-nav .gtm_learn_more {
+  display: inline-block;
+  text-decoration: none;
+  color: #888;
+  transition: color 0.2s linear;
+}
+.sticky-nav .container #menu-list .sticky-nav-ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 20px;
+}
+.sticky-nav .container #menu-list .sticky-nav-ul li {
+  list-style: none;
+  font-size: 14px;
+  line-height: 13px;
+  font-weight: 400;
+  color: #999;
+  padding: 0 10px;
+}
+.sticky-nav .container #menu-list .sticky-nav-ul li .white_gtm_learn_more {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s linear;
+}
+.sticky-nav .container #menu-list .sticky-nav-ul li .button-gtm_learn_more {
+  color: #000;
+  font-size: 13px;
+  line-height: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1px;
+  padding: 8px 14px;
+  border-radius: 2px;
+  background: #0f0;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.promotion {
+  width: 100%;
+  z-index: auto;
+  background: #555;
+  text-align: center;
+  padding: 11.5px 40px 9.5px 30px;
+  margin-top: 113px;
+  left: 0;
+  min-width: 100%;
+  position: relative;
+  transform: none;
+  font-size: 14px;
+  color: #eee;
+}
+.promotion h4 {
+  margin: 0;
+  font-weight: 400;
+  color: #eee;
+  display: inline;
+}
+.promotion .shop_now {
+  color: #eee;
+}
+.promotion .shop_now:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin-top: 0;
+}
+main section {
+  padding: 6.25rem 0 3rem;
+  display: grid;
+  justify-content: center;
+}
+main section .product-title {
+  text-align: center;
+  color: #fff;
+  font: 100 1.5rem/1.5rem "Titillium Web", Arial, Helvetica, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+}
+main section .header {
+  color: #44d62c;
+  font: 700 4.5rem/1 "Titillium Web", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+main section .col {
+  grid-column: 1/-1;
+}
+main section .col p {
+  margin: 0;
+}
+main section .fixed-for {
+  display: grid;
+  font: normal 1.125rem/1.5rem Roboto;
+  color: #9a9a9a;
+  text-align: center;
+}
+main .image {
+  max-width: 100%;
+}
+main .image img {
+  display: block;
+  width: 100%;
+}
+main #where-to-buy {
+  display: block;
+  padding-top: 4.5rem;
+}
+main #where-to-buy .content {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+main #where-to-buy .content .header {
+  color: #fff;
+  font: 700 3rem/1 "Titillium Web", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+main #where-to-buy .content .body-copy {
+  text-align: center;
+}
+main #where-to-buy .content .body-copy .orphanfixed {
+  font: normal 1.125rem/1.5rem Roboto;
+  color: #9a9a9a;
+}
+main #where-to-buy .icons {
+  padding-bottom: 6.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+main #where-to-buy .icons ul {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main #where-to-buy .icons .item {
+  max-width: 364px;
+  text-align: center;
+  display: grid;
+  row-gap: 1rem;
+  justify-items: center;
+  width: 100%;
+  grid-auto-flow: row;
+}
+main #where-to-buy .icons .item img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+main #where-to-buy .icons .item .header {
+  font: 600 1.5rem/1 "Titillium Web", Arial, Helvetica, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  color: #fff;
+}
+main #where-to-buy .icons .item .body-copy {
+  margin: 0;
+}
+main #where-to-buy .icons .item .body-copy .orphanfixed {
+  font: normal 1.125rem/1.5rem Roboto;
+  color: #9a9a9a;
+}
+main #where-to-buy .icons .item .product-selection {
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+main #where-to-buy .icons .item .product-selection p {
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+  color: #fff;
+  font-weight: 500;
+  z-index: 1;
+  position: relative;
+}
+main #where-to-buy .icons .item .product-selection label {
+  color: #aaa;
+  display: block;
+  padding: 7px;
+  top: 14px;
+  left: 6px;
+  position: relative;
+  margin: 0;
+  margin-top: 0px;
+  font: normal 14px/1em "Roboto", Arial, Helvetica, sans-serif;
+  text-align: left;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main #where-to-buy .icons .item .product-selection select {
+  scrollbar-width: thin;
+  scrollbar-color: #44d62c #222222;
+}
+main #where-to-buy .icons .item .product-selection .button-primary {
+  color: #000;
+  font-size: 13px;
+  line-height: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: 2px;
+  background: #0f0;
+  transition: background-color 0.15s ease-in-out;
+}
+main #where-to-buy .icons .item .cta {
+  color: #000;
+  font-size: 13px;
+  line-height: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: 2px;
+  background: #0f0;
+  transition: background-color 0.15s ease-in-out;
+}
+main .gift-card {
+  display: block;
+  padding-top: 6.25rem;
+}
+main .gift-card__content {
+  max-width: 1140px;
+  margin: 0 auto;
+  gap: 1.5rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+main .gift-card__title {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .gift-card__description {
+  font: normal 1.125rem/1.5rem;
+  color: #9a9a9a;
+}
+main .gift-card__icons {
+  display: grid;
+  grid-template-columns: repeat(3, [col-start] 1fr);
+  justify-items: center;
+  -moz-column-gap: 1.5rem;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  max-width: 1140px;
+  margin: 0 auto;
+  align-items: start;
+}
+main .gift-card__list {
+  max-width: 300px;
+  display: contents;
+}
+main .gift-card__item {
+  text-align: center;
+  display: grid;
+  row-gap: 1rem;
+  justify-items: center;
+  width: 100%;
+  grid-auto-flow: row;
+}
+main .gift-card__item img {
+  width: 150px;
+}
+main .gift-card__item h3 {
+  font: 600 1.5rem/1 "Titillium Web", Arial, Helvetica, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+}
+main .gift-card__item p {
+  font: normal 1.125rem/1.5rem;
+  color: #9a9a9a;
+}
+main .gift-card__item a {
+  display: inline-block;
+  color: #000;
+  font-size: 13px;
+  line-height: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: 2px;
+  background: #0f0;
+  transition: background-color 0.15s ease-in-out;
+}
+main .how-to-redeem {
+  display: block;
+}
+main .how-to-redeem__content {
+  width: 100%;
+}
+main .how-to-redeem__title {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+main .faq {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 0;
+  font-family: "Roboto", Arial, sans-serif;
+}
+main .faq .faq-container {
+  margin: 0 auto;
+}
+main .faq .faq-container .faq-title {
+  width: 1200px;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+main .faq .faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main .faq .faq-list .faq-item {
+  background-color: #111111;
+  border-bottom: 1px solid #222222;
+}
+main .faq .faq-list .faq-item details {
+  width: 100%;
+}
+main .faq .faq-list .faq-item details summary {
+  font: 16px sans-serif;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+main .faq .faq-list .faq-item details summary::-webkit-details-marker {
+  display: none;
+}
+main .faq .faq-list .faq-item details summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  transition: 0.3s ease;
+  margin-right: 10px;
+}
+main .faq .faq-list .faq-item details summary:hover {
+  color: #fff;
+}
+main .faq .faq-list .faq-item details[open] summary {
+  color: #fff;
+}
+main .faq .faq-list .faq-item details[open] summary::after {
+  transform: rotate(-135deg);
+}
+main .faq .faq-list .faq-item .faq-answer {
+  padding: 0 20px 20px 20px;
+  color: #999999;
+  font-size: 16px;
+  line-height: 1.6;
+}
+main .faq .faq-list .faq-item .faq-answer p {
+  margin: 0;
+}
+main .faq .faq-list .faq-item .faq-answer a {
+  color: #44d62c;
+}
+main .faq .faq-list .faq-item .faq-answer a:hover {
+  text-decoration: underline;
+}
+main .razer-legal-notice {
+  background-color: #000000;
+  padding: 40px 20px;
+  text-align: center;
+}
+main .razer-legal-notice .legal-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  gap: 1.5rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+main .razer-legal-notice .legal-container .legal-body p {
+  line-height: 1.6;
+  margin: 0;
+}
+main .razer-legal-notice .legal-container .legal-body small {
+  display: inline-block;
+  color: #999999;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+main .razer-legal-notice .legal-container .legal-body small.scam-warning {
+  font-weight: bold;
+  font-size: 12px;
+}
+main .razer-legal-notice .legal-container .legal-body a {
+  color: #44d62c;
+  text-decoration: none;
+}
+main .razer-legal-notice .legal-container .legal-body a:hover {
+  text-decoration: underline;
+}
+
+/* =========== DROPDOWN CONTAINER (ერთი მშობელი!) =========== */
+.mega-menu-container {
+  position: absolute;
+  top: 41px;
+  right: 0;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 40vh;
+  max-height: 75vh;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  overflow: auto;
+  border-bottom: 1px solid #44d62c;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* როცა header-ზე hover არის ან თავად dropdown-ზე */
+header:hover .mega-menu-container,
+.mega-menu-container:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* =========== DROPDOWN CONTENT (თითოეული კონტენტი) =========== */
+.drop-down {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem 5rem;
+  list-style: none;
+  /* ყველა content იგივე ადგილას overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* თავიდან დამალული */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-30px);
+  /* Smooth transition content swap-ისთვის */
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* მხოლოდ active content ჩანს */
+.drop-down.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  position: relative; /* active content-ი იღებს space */
+}
+
+/* =========== SECTION STYLING =========== */
+.section h4 {
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.section {
+  width: 25%;
+}
+
+.section ul {
+  list-style: none;
+}
+
+.section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.section ul li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.section ul li a:hover {
+  color: #44d62c;
+  padding-left: 5px; /* მცირე animation */
+}
+
+/* Close button დამალვა (არ გვჭირდება hover navigation-ში) */
+.mega-menu-close-button {
+  display: none;
+}
+
+footer {
+  background-color: #111;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer .text-span {
+  list-style: none;
+  max-width: 1200px;
+  font-size: 12px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+footer .text-span ul {
+  list-style: none;
+}
+footer .text-span ul li {
+  padding-bottom: 0.75rem;
+  text-decoration: none;
+}
+footer .text-span ul li a {
+  color: #999;
+  text-decoration: none;
+}
+footer .text-span ul span {
+  color: #fff;
+  display: block;
+  font-weight: 400;
+  margin-bottom: 0;
+  min-width: 4.375rem;
+  padding-bottom: 0.75rem;
+}
+footer .display-block {
+  display: block;
+}
+footer .display-block span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+footer .display-block ul {
+  list-style: none;
+  display: block;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+footer .display-block ul li {
+  padding: 3px;
+  line-height: 5px;
+}
+footer .display-block ul li a {
+  display: block;
+  height: 1.75rem;
+  width: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+footer .display-block ul .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+footer .display-block ul .icon-facebook {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0001-facebook-grey.svg");
+}
+footer .display-block ul .icon-instagram {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0003-instagram-grey.svg");
+}
+footer .display-block ul .icon-threads {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0018-threads-grey.svg");
+}
+footer .display-block ul .icon-twitter {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0005-twitter-grey.svg");
+}
+footer .display-block ul .icon-youtube {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0008-youtube-grey.svg");
+}
+footer .display-block ul .icon-tiktok {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0014-tiktok-grey.svg");
+}
+footer .display-block ul .icon-twitch {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0009-twitch-grey.svg");
+}
+footer .display-block ul .icon-discord {
+  background-image: url("https://assets2.razerzone.com/images/phoenix/SM0015-discord-grey.svg");
+}
+footer .display-block span {
+  color: #fff;
+  display: block;
+  font-weight: 400;
+  margin-bottom: 0;
+  min-width: 4.375rem;
+  font-size: 12px;
+}
+footer h4 {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #44d62c;
+}
+
+.end-footer {
+  background-color: #111;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.end-footer ul {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.end-footer ul li {
+  text-decoration: none;
+}
+.end-footer ul li a {
+  color: #999;
+  text-decoration: none;
+}
+.end-footer .span-end {
+  width: 15px;
+  display: contents;
+}
+
+@media (max-width: 1024px) {
+  .sticky-nav .container {
+    padding: 0 20px;
+  }
+  .sticky-nav-ul {
+    gap: 18px;
+  }
+  ul, li {
+    display: none;
+  }
+  main .gift-card__icons {
+    display: grid;
+    justify-items: center;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    max-width: 1140px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  .head .razer_main .icons {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 2px;
+         column-gap: 2px;
+    padding-left: 190px;
+  }
+  .head .razer_main .logo img {
+    width: 35px;
+    height: 35px;
+    display: block;
+    margin-left: 95px;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  main .gift-card__icons {
+    display: inline-block;
+    justify-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  ul, li {
+    display: none;
+  }
+  .sticky-nav {
+    top: 50px;
+  }
+  #menu-list {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+  .sticky-nav-ul li:not(:last-child) {
+    display: none;
+  }
+  .head .razer_main .icons {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 2px;
+         column-gap: 2px;
+    margin-right: 160px;
+  }
+  .head .razer_main .logo img {
+    width: 35px;
+    height: 35px;
+    margin-right: 55px;
+  }
+  .sticky-nav-ul {
+    gap: 0;
+  }
+  .product-name {
+    font-size: 13px;
+  }
+  .button-gtm_learn_more {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=razergiftcard.css.map */

@@ -1,0 +1,756 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+
+// ! global style etc! ///
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Roboto,
+    Helvetica Neue,
+    Arial,
+    Noto Sans,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    Segoe UI Symbol,
+    "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: left;
+  background-color: #000;
+}
+
+// ! global style end ! ////
+
+// ! header start //
+.head {
+  display: flex;
+  align-items: center;
+  height: 3.75rem;
+
+  padding-bottom: 0;
+  transition: all 0.3s linear;
+  background: #000;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 30;
+
+  // ! main razer //
+
+  .razer_main {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 3.125rem;
+
+    .logo {
+      color: #fff;
+      text-decoration: none;
+
+      img {
+        @include img;
+      }
+    }
+
+    // ! container  //
+
+    .container {
+      width: 100%;
+      // !!!! 40px
+      padding: 0 40px;
+      position: relative;
+
+      .navbar {
+        // ! empty //
+
+        .nav-links {
+          @include ul;
+
+          .nav-link {
+            @include li;
+
+            a {
+              text-decoration: none;
+              color: $color;
+            }
+
+            &:hover .drop-down {
+              @include hover;
+            }
+          }
+
+          // ! drop downs start //
+
+          .drop-down {
+            @include drop-down;
+
+            .mega-menu-close-button {
+              @include mega-menu-close-button;
+
+              .section {
+                @include section;
+
+                h4 {
+                  @include h4;
+                }
+              }
+            }
+
+            // ! drop downs ul li start //
+
+            ul {
+              @include dropdown-ul;
+
+              li {
+                @include dropdown-li;
+
+                a {
+                  color: $color-d;
+
+                  &:hover {
+                    color: $razer-green;
+                    padding-right: 0px;
+                  }
+                }
+              }
+
+              // ! ul li a drop-down end //
+            }
+          }
+        }
+      }
+    }
+
+    // ! drop downs end //
+
+    // ! main razer //
+    .icons {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+
+      .icon {
+        padding: 0 14px 0 0;
+
+        &:hover {
+          svg path,
+          svg circle {
+            fill: $color-d;
+          }
+        }
+      }
+    }
+  }
+}
+// ! header end //
+
+//razer  gift card  start //
+
+.sticky-nav {
+  border-bottom: 1px solid #44d62c;
+  position: fixed;
+  top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 4;
+  left: 0;
+  max-width: 100%;
+  background-color: #101010;
+
+  a.gtm_learn_more {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s linear;
+  }
+
+  a.gtm_learn_more:hover {
+    color: #44d62c;
+  }
+
+  .container {
+    padding: 10px;
+    max-width: 1200px;
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+
+    #menu-list {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      -moz-column-gap: 1.5rem;
+      column-gap: 1.5rem;
+      align-items: center;
+
+      .product-name {
+        grid-column: 1 / span 8;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 16px;
+        font-family: RazerF5;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 0.5rem 0;
+        margin: 0;
+      }
+
+      .mobile-nav {
+        display: none;
+
+        .subnav-toggle {
+          cursor: pointer;
+
+          .icon-bar {
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 1;
+            text-transform: none;
+          }
+        }
+
+        .gtm_learn_more {
+          display: inline-block;
+          text-decoration: none;
+          color: #888;
+          transition: color 0.2s linear;
+        }
+      }
+
+      .sticky-nav-ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0 20px;
+
+        li {
+          list-style: none;
+          font-size: 14px;
+          line-height: 13px;
+          font-weight: 400;
+          color: #999;
+          padding: 0 10px;
+
+          .white_gtm_learn_more {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.2s linear;
+          }
+
+          .button-gtm_learn_more {
+            color: #000;
+            font-size: 13px;
+            line-height: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 1px;
+            padding: 8px 14px;
+            border-radius: 2px;
+            background: #0f0;
+            transition: background-color 0.15s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+//razer  gift card  end//
+
+// ! promotion start //
+
+.promotion {
+  width: 100%;
+  z-index: auto;
+  background: $background;
+  text-align: center;
+  padding: 11.5px 40px 9.5px 30px;
+  margin-top: 113px;
+
+  left: 0;
+  min-width: 100%;
+  position: relative;
+  transform: none;
+
+  font-size: 14px;
+  color: $color-d;
+
+  h4 {
+    margin: 0;
+    font-weight: 400;
+    color: $color-d;
+    display: inline;
+  }
+
+  .shop_now {
+    color: $color-d;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// ! promotion end //
+
+// main! start//
+
+
+main{
+  max-width: 100%;
+
+.images-skin{
+
+color: $bg-color;
+
+}
+
+.skins {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  background-color: $bg-color;
+
+  &__label {
+    color: $color;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  &__headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $razer-green;
+    letter-spacing: 3px;
+    margin: 0;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    color: $color;
+    font-size: 16px;
+    max-width: 840px;
+    margin: 0 ;
+    line-height: 1.75;
+    font-weight: 400;
+  }
+}
+
+
+.items {
+  text-align: center;
+  padding: 80px 20px 100px;
+  background-color: $bg-color;
+
+  &__title {
+    color: $color-d;
+    font-size: 52px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  &__subtitle {
+    color: $color-d;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  &__desc {
+    color: $color;
+    font-size: 16px;
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+
+a {
+  color: #44d62c;
+  text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+ }
+
+
+}
+
+
+// main! end //
+
+// ! ეს შეგიძია მიქსიენნბში გადაიტანო და გასტილო ან დატოვო ასევე
+
+/* =========== DROPDOWN CONTAINER (ერთი მშობელი!) =========== */
+
+.mega-menu-container {
+  @include mega-menu-container;
+}
+
+/* როცა header-ზე hover არის ან თავად dropdown-ზე */
+header:hover .mega-menu-container,
+.mega-menu-container:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* =========== DROPDOWN CONTENT (თითოეული კონტენტი) =========== */
+
+.drop-down {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem 5rem;
+  list-style: none;
+
+  /* ყველა content იგივე ადგილას overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  /* თავიდან დამალული */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-30px);
+
+  /* Smooth transition content swap-ისთვის */
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* მხოლოდ active content ჩანს */
+
+.drop-down.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  position: relative; /* active content-ი იღებს space */
+}
+
+/* =========== SECTION STYLING =========== */
+
+.section h4 {
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.section {
+  width: 25%;
+}
+.section ul {
+  list-style: none;
+}
+
+.section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.section ul li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 13px;
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.section ul li a:hover {
+  color: #44d62c;
+  padding-left: 5px; /* მცირე animation */
+}
+
+/* Close button დამალვა (არ გვჭირდება hover navigation-ში) */
+.mega-menu-close-button {
+  display: none;
+}
+
+// !footer start //
+
+footer {
+  background-color: #111;
+  padding-top: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .text-span {
+    list-style: none;
+    max-width: 1200px;
+    font-size: 12px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.75rem;
+
+    ul {
+      list-style: none;
+
+      li {
+        padding-bottom: 0.75rem;
+
+        text-decoration: none;
+        a {
+          color: #999;
+          text-decoration: none;
+        }
+      }
+
+      span {
+        color: #fff;
+        display: block;
+        font-weight: 400;
+        margin-bottom: 0;
+        min-width: 4.375rem;
+        padding-bottom: 0.75rem;
+      }
+    }
+  }
+
+  .display-block {
+    display: block;
+
+    span {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      display: block;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 3px;
+        line-height: 5px;
+
+        a {
+          display: block;
+          height: 1.75rem;
+          width: 1.75rem;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      .icon-facebook {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0001-facebook-grey.svg");
+      }
+
+      .icon-instagram {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0003-instagram-grey.svg");
+      }
+
+      .icon-threads {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0018-threads-grey.svg");
+      }
+
+      .icon-twitter {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0005-twitter-grey.svg");
+      }
+
+      .icon-youtube {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0008-youtube-grey.svg");
+      }
+
+      .icon-tiktok {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0014-tiktok-grey.svg");
+      }
+
+      .icon-twitch {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0009-twitch-grey.svg");
+      }
+
+      .icon-discord {
+        background-image: url("https://assets2.razerzone.com/images/phoenix/SM0015-discord-grey.svg");
+      }
+    }
+
+    span {
+      color: #fff;
+      display: block;
+      font-weight: 400;
+      margin-bottom: 0;
+      min-width: 4.375rem;
+      font-size: 12px;
+    }
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: #44d62c;
+  }
+}
+
+.end-footer {
+  background-color: #111;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      text-decoration: none;
+      a {
+        color: #999;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .span-end {
+    width: 15px;
+    display: contents;
+  }
+}
+
+// !footer end //
+
+
+
+
+@media (max-width: 480px) {
+
+.head .razer_main .icons {
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+    padding-left: 40px;
+}
+
+.head .razer_main .logo img {
+    width: 35px;
+    height: 35px;
+    margin-left: 190px;
+    display: block;
+}
+
+
+ul,li{
+  display: none;
+}
+
+
+footer {
+    padding: 25px 15px;
+  }
+
+  footer .text-span ul li {
+    padding-bottom: 10px;
+  }
+
+  footer .display-block ul {
+    gap: 10px;
+  }
+
+  .end-footer {
+    text-align: center;
+  }
+
+  .end-footer ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main .razer-section {
+    display: unset;
+    padding: 0;
+    gap: 10px;
+  }
+  
+  
+}
+
+
+@media (max-width: 1024px) {
+
+  .sticky-nav .container {
+    padding: 0 20px;
+  }
+
+  .sticky-nav-ul {
+    gap: 18px;
+  }
+
+ul,li{
+  display: none;
+}
+
+.head .razer_main .icons {
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+    padding-left: 190px;
+}
+
+.head .razer_main .logo img {
+    width: 35px;
+    height: 35px;
+    display: block;
+    margin-left: 95px;
+}
+
+
+
+}

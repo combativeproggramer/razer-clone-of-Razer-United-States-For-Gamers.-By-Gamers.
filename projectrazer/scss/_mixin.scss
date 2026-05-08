@@ -1,0 +1,168 @@
+@mixin img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+@mixin grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin razer_main {
+    // ! აქ კონტეინერის ზომები გეკადა 
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px; //! ეს
+  min-height: 3.125rem; //! და ეს
+}
+
+@mixin ul {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  height: 100%;
+  column-gap: 45px;
+}
+
+@mixin li {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin h4 {
+  color: #bbb;
+  direction: ltr;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin: 0px 0px 0px 8px;
+  padding: 0px;
+}
+
+@mixin section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 10px;
+  overflow: auto;
+  direction: rtl;
+}
+
+@mixin mega-menu-close-button {
+  background: url(https://www.razer.com/assets/images/mega-menu/desktop-close-icon.svg)
+    center no-repeat;
+  border: 0px;
+  display: block;
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  transition: background-image 0.5s ease-in-out;
+}
+
+@mixin dropdown-ul {
+  background: #bbb;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin dropdown-li {
+  background: gray;
+  padding: 15px 0px 15px 0px;
+  position: relative;
+  width: 100%;
+}
+
+@mixin drop-down {
+  position: absolute;
+  top: 41px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 260px;
+  height: 760px;
+
+  overflow-y: auto;
+
+  background-color: gray;
+
+  padding: 24px 0;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #44d62c;
+
+  z-index: 999;
+  list-style: none;
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+@mixin hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%);
+}
+
+@mixin background-img {
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
+}
+
+@mixin picture-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 75vh;
+  min-height: 700px;
+}
+
+
+
+ @mixin  mega-menu-container{
+
+  position: absolute;
+  top: 41px; 
+  right: 0;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 40vh;
+  max-height: 75vh;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+
+  overflow: auto;
+  border-bottom: 1px solid #44d62c;
+
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+
+  
+   transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    transform 0.4s ease;
+
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+}
